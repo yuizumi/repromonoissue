@@ -1,0 +1,2 @@
+$ mcs Test.cs /t:library /r:nunit.framework /r:NSubstitute
+$ nunit-console Test.dll

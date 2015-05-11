@@ -1,2 +1,78 @@
 $ mcs Test.cs /t:library /r:nunit.framework /r:NSubstitute
 $ nunit-console Test.dll
+
+NUnit version 2.4.8
+Copyright (C) 2002-2007 Charlie Poole.
+Copyright (C) 2002-2004 James W. Newkirk, Michael C. Two, Alexei A. Vorontsov.
+Copyright (C) 2000-2002 Philip Craig.
+All Rights Reserved.
+
+Runtime Environment -
+   OS Version: Unix 14.3.0.0
+  CLR Version: 4.0.30319.17020 ( 4.0.0 ((detached/d136b79 Mon Apr 13 14:40:59 EDT 2015) )
+
+.* Assertion at sgen-alloc.c:460, condition `*p == NULL' not met
+
+Stacktrace:
+
+  at <unknown> <0xffffffff>
+  at Castle.Proxies.ICrasherProxy.Crash<T> () <IL 0x00052, 0x0012f>
+  at Test.TestCrash () <IL 0x0000b, 0x00038>
+  at (wrapper runtime-invoke) object.runtime_invoke_void__this__ (object,intptr,intptr,intptr) <IL 0x0005e, 0xffffffff>
+  at <unknown> <0xffffffff>
+  at (wrapper managed-to-native) System.Reflection.MonoMethod.InternalInvoke (System.Reflection.MonoMethod,object,object[],System.Exception&) <IL 0x00038, 0xffffffff>
+  at System.Reflection.MonoMethod.Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo) [0x00054] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/class/corlib/System.Reflection/MonoMethod.cs:230
+  at System.Reflection.MethodBase.Invoke (object,object[]) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/class/corlib/System.Reflection/MethodBase.cs:114
+  at NUnit.Core.Reflect.InvokeMethod (System.Reflection.MethodInfo,object,object[]) [0x0000c] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/Reflect.cs:412
+  at NUnit.Core.Reflect.InvokeMethod (System.Reflection.MethodInfo,object) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/Reflect.cs:397
+  at NUnit.Core.TestMethod.RunTestMethod (NUnit.Core.TestCaseResult) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestMethod.cs:254
+  at NUnit.Core.TestMethod.doTestCase (NUnit.Core.TestCaseResult) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestMethod.cs:237
+  at NUnit.Core.TestMethod.doRun (NUnit.Core.TestCaseResult) [0x00028] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestMethod.cs:195
+  at NUnit.Core.TestMethod.Run (NUnit.Core.TestCaseResult) [0x00077] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestMethod.cs:164
+  at NUnit.Core.NUnitTestMethod.Run (NUnit.Core.TestCaseResult) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/NUnitTestMethod.cs:32
+  at NUnit.Core.TestCase.Run (NUnit.Core.EventListener) [0x0004f] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestCase.cs:58
+  at NUnit.Core.TestCase.Run (NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestCase.cs:42
+  at NUnit.Core.TestSuite.RunAllTests (NUnit.Core.TestSuiteResult,NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x00071] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestSuite.cs:288
+  at NUnit.Core.TestSuite.Run (NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x0008c] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestSuite.cs:166
+  at NUnit.Core.TestFixture.Run (NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x00016] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestFixture.cs:35
+  at NUnit.Core.TestSuite.RunAllTests (NUnit.Core.TestSuiteResult,NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x00071] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestSuite.cs:288
+  at NUnit.Core.TestSuite.Run (NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x0008c] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestSuite.cs:166
+  at NUnit.Core.SimpleTestRunner.Run (NUnit.Core.EventListener,NUnit.Core.ITestFilter) [0x0002d] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/SimpleTestRunner.cs:145
+  at NUnit.Core.TestRunnerThread.TestRunnerThreadProc () [0x00000] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/nunit24/NUnitCore/core/TestRunnerThread.cs:149
+  at System.Threading.Thread.StartInternal () [0x00016] in /private/tmp/source-mono-mac-4.0.0-branch/bockbuild-mono-4.0.0-branch/profiles/mono-mac-xamarin/build-root/mono-4.0.0/mcs/class/corlib/System.Threading/Thread.cs:696
+  at (wrapper runtime-invoke) object.runtime_invoke_void__this__ (object,intptr,intptr,intptr) <IL 0x0005e, 0xffffffff>
+
+Native stacktrace:
+
+        0   mono                                0x000e8af6 mono_handle_native_sigsegv + 342
+        1   mono                                0x00139071 sigabrt_signal_handler + 129
+        2   libsystem_platform.dylib            0x95a4f03b _sigtramp + 43
+        3   ???                                 0xffffffff 0x0 + 4294967295
+        4   libsystem_c.dylib                   0x95c72eee abort + 156
+        5   mono                                0x00288971 monoeg_log_default_handler + 129
+        6   mono                                0x00288a6b monoeg_assertion_message + 107
+        7   mono                                0x0024a953 mono_gc_try_alloc_obj_nolock + 739
+        8   mono                                0x0024aff1 mono_gc_alloc_string + 65
+        9   mono                                0x001fbf8d mono_string_new_size + 109
+        10  mono                                0x001ff5dc mono_ldstr_metadata_sig + 60
+        11  mono                                0x00202c85 mono_ldstr + 101
+        12  mono                                0x000472b1 mono_method_to_ir + 30417
+        13  mono                                0x00031c7a mini_method_compile + 3754
+        14  mono                                0x000346f5 mono_jit_compile_method_with_opt + 1669
+        15  mono                                0x00034019 mono_jit_compile_method + 57
+        16  mono                                0x000ea201 common_call_trampoline + 961
+        17  mono                                0x000e9e2c mono_magic_trampoline + 60
+        18  ???                                 0x0045a088 0x0 + 4563080
+
+Debug info from gdb:
+
+(lldb) command source -s 1 '/tmp/mono-gdb-commands.1upKW0'
+(lldb) quit
+
+=================================================================
+Got a SIGABRT while executing native code. This usually indicates
+a fatal error in the mono runtime or one of the native libraries
+used by your application.
+=================================================================
+
+Abort trap: 6
